@@ -15,7 +15,7 @@ class Home extends StatelessWidget {
         if (!snapshot.hasData) {
           return const Center(child: CircularProgressIndicator());
         } else {
-          List<Member> members = snapshot.data!;
+          List<Member> members = snapshot.data!; 
           return Scaffold(
             backgroundColor: white,
             appBar: AppBar(title: const Text("Family Tree")),

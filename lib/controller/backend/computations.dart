@@ -25,13 +25,6 @@ class Computations {
         children.add(_getTree(map["Children"][i]));
       }
     }
-    return Member(
-      id: map["Id"],
-      name: map["Name"],
-      children: children,
-      packageAmount: map["PackageAmount"],
-      totalAchievedIncome: map["TotalAchievedIncome"],
-      totalExpectedIncome: map["TotalExpectedIncome"],
-    );
+    return Member.fromJson(map, children);
   }
 }

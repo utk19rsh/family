@@ -13,21 +13,14 @@ class Member {
   final double? packageAmount;
   final double totalAchievedIncome, totalExpectedIncome;
 
-  factory Member.fromJson({
-    required int id,
-    required String name,
-    required List<Member> children,
-    required double packageAmount,
-    required double totalAchievedIncome,
-    required double totalExpectedIncome,
-  }) {
+  factory Member.fromJson(Map<String, dynamic> map, List<Member> children) {
     return Member(
-      id: id,
+      id: map["Id"],
+      name: map["Name"],
       children: children,
-      name: name,
-      packageAmount: packageAmount,
-      totalAchievedIncome: totalAchievedIncome,
-      totalExpectedIncome: totalExpectedIncome,
+      packageAmount: map["PackageAmount"],
+      totalAchievedIncome: map["TotalAchievedIncome"],
+      totalExpectedIncome: map["TotalExpectedIncome"],
     );
   }
 }
